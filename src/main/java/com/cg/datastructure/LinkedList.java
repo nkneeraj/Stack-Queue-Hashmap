@@ -110,4 +110,18 @@ public class LinkedList<K> {
 		}
 		return size;
 	}
+	
+	public void addPrint() {
+		if (head == null) {
+			System.out.println("No node present");
+			return;
+		}
+		INode<K> temp = head;
+		while (temp != null) {
+			System.out.println(temp.getKey() + " X ");
+			temp = temp.getNext();
+		}
+		return;
+	}
+	
 }
