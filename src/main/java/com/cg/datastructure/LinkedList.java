@@ -65,8 +65,8 @@ public class LinkedList<K> {
 		temp.setNext(null);
 		return head;
 	}
-	
-	//uc7
+
+	// uc7
 	public INode<K> search(K key) {
 		INode<K> temp = head;
 		while (temp != null) {
@@ -77,18 +77,37 @@ public class LinkedList<K> {
 		}
 		return null;
 	}
-	
-	//uc8
-	public void insertAfterKey(K key, INode<K> node)
-	{
+
+	// uc8
+	public void insertAfterKey(K key, INode<K> node) {
 		INode<K> temp = search(key);
-		if(temp==null)
-			System.out.println("no node present with key: "+key);
-		else
-		{
+		if (temp == null)
+			System.out.println("no node present with key: " + key);
+		else {
 			INode<K> keyNext = temp.getNext();
 			temp.setNext(node);
 			node.setNext(keyNext);
 		}
+	}
+
+	// uc9
+	public INode<K> deleteNodeWithKey(K key) {
+		INode<K> temp = head;
+		while (temp != null && temp.getNext().getKey() != key)
+			temp = temp.getNext();
+		INode<K> deleteNode = temp.getNext();
+		temp.setNext(deleteNode.getNext());
+		deleteNode.setNext(null);
+		return deleteNode;
+	}
+
+	public int size() {
+		INode<K> temp = head;
+		int size = 0;
+		while (temp != null) {
+			temp = temp.getNext();
+			size++;
+		}
+		return size;
 	}
 }
