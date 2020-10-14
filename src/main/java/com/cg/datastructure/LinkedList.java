@@ -23,4 +23,18 @@ public class LinkedList<K> {
 			this.head.setNext(temp);
 		}
 	}
+	
+	//uc3 Append
+	public void append(INode<K> Node) {
+		if (head == null) {
+			head = Node;
+			return;
+		}
+		INode<K> temp = head;
+		while (temp.getNext() != null) {
+			temp = temp.getNext();
+		}
+		temp.setNext(Node);
+		return;
+	}
 }
