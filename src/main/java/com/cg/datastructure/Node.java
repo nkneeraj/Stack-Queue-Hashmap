@@ -1,10 +1,9 @@
 package com.cg.datastructure;
 
-public class Node<K> implements com.cg.linkedlistgradle.INode<K>
+public class Node<K> implements INode<K>
 {
-
 	private K key; // for private objects to access we need getters and setters.
-	private INode next;
+	private INode<K> next;
 
 	public Node(K data) {
 		this.key = data;
@@ -19,24 +18,11 @@ public class Node<K> implements com.cg.linkedlistgradle.INode<K>
 		this.key = key;
 	}
 
-	public INode getNext() {
+	public INode<K> getNext() {
 		return next;
 	}
 
-//	public void setNext(Node next) {
-//		this.next = next;
-//	}
-
-	@Override
-	public void setNext(INode node) {
-		this.next=node;
-		
+	public void setNext(INode<K> node) {
+		this.next=node;	
 	}
-
-//	@Override
-//	public String toString() {
-//		return "Node [key=" + key + ", next=" + next + "]";
-//	}
-//	
-	
 }

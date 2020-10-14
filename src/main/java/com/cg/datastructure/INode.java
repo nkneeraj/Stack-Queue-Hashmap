@@ -1,11 +1,9 @@
 package com.cg.datastructure;
 
 public interface INode<K> {
-	K getKey();
-
-	void setKey(K key);
-
-	INode<K> getNext();
-
-	void setNext(INode<K> next);
+	
+	public void setKey(K key);
+	public K getKey();
+	public void setNext(INode<K> node);
+	public INode<K> getNext();
 }
