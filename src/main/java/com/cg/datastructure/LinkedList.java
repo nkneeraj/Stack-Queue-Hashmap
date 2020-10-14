@@ -37,4 +37,11 @@ public class LinkedList<K> {
 		temp.setNext(Node);
 		return;
 	}
+	
+	//uc4 insert node between two nodes
+	public void insert(INode<K> pre, INode<K> newNode, INode<K> next) {
+		pre.setNext(newNode);
+		newNode.setNext(next);
+	}
 }
+
