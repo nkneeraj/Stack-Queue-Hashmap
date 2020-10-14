@@ -44,6 +44,13 @@ public class LinkedHashMap<K, V> {
 		} else
 			mapNode.setValue(value);
 	}
+	
+	public void remove(K key) {
+		int index = this.getBucketIndex(key);
+		LinkedList<K> linkedList = this.bucketArray.get(index);
+		INode<K> tempNode = linkedList.search(key);
+		linkedList.deleteNodeWithKey(tempNode.getKey());
+	}
 
 	@Override
 	public String toString() {
