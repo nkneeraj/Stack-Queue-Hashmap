@@ -14,8 +14,12 @@ public class Queue<K> {
 	public void printQueue() {
 		LinkedList.addPrint();
 	}
-	
+
 	public int size() {
 		return LinkedList.size();
+	}
+
+	public INode<K> deQueue() {
+		return LinkedList.Pop();
 	}
 }
