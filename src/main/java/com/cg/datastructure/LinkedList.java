@@ -42,13 +42,27 @@ public class LinkedList<K> {
 		newNode.setNext(next);
 	}
 
-	// uc5 
+	// uc5
 	public INode<K> Pop() {
 		if (head == null)
 			return head;
 		INode<K> temp = head.getNext();
 		head.setNext(temp);
 		head = temp;
+		return head;
+	}
+
+	// uc6
+	public INode<K> popLast() {
+		if (head == null)
+			return null;
+		if (head.getNext() == null)
+			return null;
+		INode<K> temp = head;
+		while (temp.getNext().getNext() != null) {
+			temp = temp.getNext();
+		}
+		temp.setNext(null);
 		return head;
 	}
 }
