@@ -1,7 +1,7 @@
 package com.cg.datastructure;
 
 public class LinkedList<K> {
-	
+
 	public INode<K> head;
 	public INode<K> tail;
 
@@ -9,22 +9,20 @@ public class LinkedList<K> {
 		this.head = null;
 		this.tail = null;
 	}
-	
-	//uc1 add node at first
-	public void add(INode<K> node)
-	{
-		if(this.head==null) {
-			this.head= node;
-			this.tail= node;
-		}
-		else {
+
+	// uc1 add node at first
+	public void add(INode<K> node) {
+		if (this.head == null) {
+			this.head = node;
+			this.tail = node;
+		} else {
 			INode<K> temp = this.head;
 			this.head = node;
 			this.head.setNext(temp);
 		}
 	}
-	
-	//uc3 Append
+
+	// uc3 Append
 	public void append(INode<K> Node) {
 		if (head == null) {
 			head = Node;
@@ -37,11 +35,20 @@ public class LinkedList<K> {
 		temp.setNext(Node);
 		return;
 	}
-	
-	//uc4 insert node between two nodes
+
+	// uc4 insert node between two nodes
 	public void insert(INode<K> pre, INode<K> newNode, INode<K> next) {
 		pre.setNext(newNode);
 		newNode.setNext(next);
 	}
-}
 
+	// uc5 
+	public INode<K> Pop() {
+		if (head == null)
+			return head;
+		INode<K> temp = head.getNext();
+		head.setNext(temp);
+		head = temp;
+		return head;
+	}
+}
