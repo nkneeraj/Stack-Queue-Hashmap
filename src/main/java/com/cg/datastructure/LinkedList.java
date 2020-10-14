@@ -77,4 +77,18 @@ public class LinkedList<K> {
 		}
 		return null;
 	}
+	
+	//uc8
+	public void insertAfterKey(K key, INode<K> node)
+	{
+		INode<K> temp = search(key);
+		if(temp==null)
+			System.out.println("no node present with key: "+key);
+		else
+		{
+			INode<K> keyNext = temp.getNext();
+			temp.setNext(node);
+			node.setNext(keyNext);
+		}
+	}
 }
